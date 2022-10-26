@@ -1,3 +1,7 @@
+/**
+ * @file main.c
+ * @author Frosty
+ */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -7,7 +11,11 @@ struct node
     struct node* next;
 };
 
-/* populates the list with user defined amount */
+/**
+ * @brief Populates the list with n amount
+ * @param[in] list Linked-list of type **node
+ * @param[in] amount Amount to populate the linked-list with
+ * */
 void populateList(struct node** list, int amount)
 {
     for (int i = 0; i < amount; i++)
@@ -19,7 +27,10 @@ void populateList(struct node** list, int amount)
     }
 }
 
-/* Adds a new node to the start of the list */
+/**
+ * @brief Append node to start of linked list
+ * @param[in] list Linked-list of type **node
+ * */
 void appendStart(struct node** list)
 {
     struct node* newNode = (struct node*)malloc(sizeof(struct node));
@@ -40,7 +51,10 @@ void appendStart(struct node** list)
     *list = newNode;
 }
 
-/* Adds a new node to the end of the list */
+/**
+ * @brief Append node to end of linked list
+ * @param[in] list Linked-list of type **node
+ * */
 void appendEnd(struct node** list)
 {
     struct node* newNode = (struct node*)malloc(sizeof(struct node));
@@ -68,7 +82,11 @@ void appendEnd(struct node** list)
     temp->next = newNode;
 }
 
-/* Removed node at the user specified index */
+/**
+ * @brief Remove node at index
+ * @param[in] list Linked-list of type **node
+ * @param[in] index Index of node to be removed
+ * */
 void removeNode(struct node** list, int index)
 {
     struct node* temp = *list;
@@ -98,7 +116,10 @@ void removeNode(struct node** list, int index)
     free(temp);
 }
 
-/* Prints all of the nodes in the list */
+/**
+ * @brief Print the linked list
+ * @param[in] list Linked-list of type *node
+ * */
 void printList(struct node* list)
 {
     while (list != NULL)
